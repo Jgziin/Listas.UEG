@@ -1,0 +1,24 @@
+//3. Fazer um algoritmo que leia três valores valorA, valorB, e valorC. O
+//programa deve verificar se estes valores formam um triângulo ou não
+//forma. Formando um triângulo para dizer se ele é equilátero, isósceles
+//ou escaleno.
+//Obs.: Usuário ideal - ele não irá digitar valores incorretos.
+
+let prompt = require('prompt-sync')();
+function verificarTriangulo() {
+    let valorA = parseFloat(prompt('Digite o valor A: '));
+    let valorB = parseFloat(prompt('Digite o valor B: '));
+    let valorC = parseFloat(prompt('Digite o valor C: '));
+    if (valorA < valorB + valorC && valorB < valorA + valorC && valorC < valorA + valorB) {
+        if (valorA === valorB && valorB === valorC) {
+        console.log('Os valores formam um triângulo equilátero.');
+        } else if (valorA === valorB || valorA === valorC || valorB === valorC) {
+            console.log('Os valores formam um triângulo isósceles.');
+        } else {
+            console.log('Os valores formam um triângulo escaleno.');
+        }
+    } else {
+        console.log('Os valores não formam um triângulo.');
+    }
+}
+verificarTriangulo();

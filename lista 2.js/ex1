@@ -1,0 +1,18 @@
+//1. Números quadrados perfeitos são aqueles cuja raiz quadrada é um
+//número inteiro. Exemplo 144. Fazer um algoritmo que dado um
+//número inteiro positivo, calcule e escreva se este é ou não quadrado
+//perfeito.
+//Obs.: Usuário ideal - ele não irá digitar valores incorretos.
+
+let prompt = require('prompt-sync')();
+function verificarQuadradoPerfeito() {
+    let numero = parseInt(prompt('Digite um número inteiro positivo: '));
+    let raizQuadrada = Math.sqrt(numero);
+    if (raizQuadrada % 1 === 0) {
+        console.log(`O número ${numero} é um quadrado perfeito.`);
+    }
+    else {
+        console.log(`O número ${numero} não é um quadrado perfeito.`);
+    }
+}
+verificarQuadradoPerfeito();
