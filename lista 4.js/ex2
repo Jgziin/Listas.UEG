@@ -1,0 +1,16 @@
+//2. Desenvolver um programa com as opções de calcular e imprimir o
+//volume e a área da superfície de um cone reto, de um cilindro ou de
+//uma esfera. O programa deverá ler a opção da figura desejada:
+//(1- cone reto; 2 - cilindro ou 3 - esfera) e de acordo com a opção
+//escolhida calcular e escrever o volume e a área da superfície da figura
+//pedida.
+
+//Fórmulas:
+ 
+//Cone Reto :   volume = π * raio^2 * altura /3
+//              área da superfície = π * raio * (raio + altura)
+
+    
+//Cilindro:
+
+//Esfera:

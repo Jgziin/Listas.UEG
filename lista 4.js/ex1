@@ -1,0 +1,59 @@
+//Escrever um algoritmo que leia o número de identificação, as 3 notas
+//obtidas por um aluno nas 3 verificações e a nota média dos exercícios
+//que fazem parte da avaliação. Calcular a média de aproveitamento do
+//aluno, usando a fórmula:
+// nota1 + nota2 * 2 + nota3 * 3 + mediaExercicios / 7
+
+//Calcular o conceito obtido pelo aluno com base na tabela abaixo:
+
+//Média Final Conceito
+//9,1 à 10,0 A
+//7,6 à 9,0 B
+//6,1 à 7,5 C
+//4,1 à 6,0 D
+//< 4,0 E
+
+//O algoritmo deve escrever o número do aluno, suas notas, a média
+//dos exercícios, a média final, o conceito correspondente e a
+//mensagem: APROVADO se o conceito for A, B ou C e REPROVADO,
+//se o conceito for D ou E.
+
+let prompt = require("prompt-sync")();
+function main() {
+  let id = prompt("Digite o número de identificação do aluno: ");
+  let nota1 = parseFloat(prompt("Digite a nota da primeira verificação: "));
+  let nota2 = parseFloat(prompt("Digite a nota da segunda verificação: "));
+  let nota3 = parseFloat(prompt("Digite a nota da terceira verificação: "));
+  let mediaExercicios = parseFloat(
+    prompt("Digite a média dos exercícios: ")
+  );
+
+  let mediaFinal =
+    (nota1 + nota2 * 2 + nota3 * 3 + mediaExercicios) / 7;
+
+  let conceito;
+  if (mediaFinal >= 9.1 && mediaFinal <= 10.0) {
+    conceito = "A";
+  } else if (mediaFinal >= 7.6 && mediaFinal <= 9.0) {
+    conceito = "B";
+  } else if (mediaFinal >= 6.1 && mediaFinal <= 7.5) {
+    conceito = "C";
+  } else if (mediaFinal >= 4.1 && mediaFinal <= 6.0) {
+    conceito = "D";
+  } else {
+    conceito = "E";
+  }
+
+  console.log(`Número do aluno: ${id}`);
+  console.log(`Notas: ${nota1}, ${nota2}, ${nota3}`);
+  console.log(`Média dos exercícios: ${mediaExercicios}`);
+  console.log(`Média final: ${mediaFinal.toFixed(2)}`);
+  console.log(`Conceito: ${conceito}`);
+
+  if (conceito === "A" || conceito === "B" || conceito === "C") {
+    console.log("APROVADO");
+  } else {
+    console.log("REPROVADO");
+  }
+}
+main();
