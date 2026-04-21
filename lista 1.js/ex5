@@ -1,0 +1,26 @@
+//5. Desenvolver um algoritmo que leia os coeficientes (A, B e C) de uma
+//equação do segundo grau ( Ax2 + Bx + C = 0) e que calcule suas
+//raízes. O algoritmo deve mostrar, quando possível, o valor das raízes
+//calculadas e a classificação das mesmas: “RAÍZES IMAGINÁRIAS”,
+//“RAIZ ÚNICA” ou “RAÍZES DISTINTAS”.
+
+let prompt = require('prompt-sync')();
+function calcularRaizes() {
+    let a = parseFloat(prompt("Digite o coeficiente A: "));
+    let b = parseFloat(prompt("Digite o coeficiente B: "));
+    let c = parseFloat(prompt("Digite o coeficiente C: "));
+
+    let delta = b * b - 4 * a * c;
+
+    if (delta < 0) {
+        console.log("RAÍZES IMAGINÁRIAS");
+    } else if (delta === 0) {
+        let raizUnica = -b / (2 * a);
+        console.log("RAIZ ÚNICA: " + raizUnica);
+    } else {
+        let raiz1 = (-b + Math.sqrt(delta)) / (2 * a);
+        let raiz2 = (-b - Math.sqrt(delta)) / (2 * a);
+        console.log("RAÍZES DISTINTAS: " + raiz1 + " e " + raiz2);
+    }
+}
+calcularRaizes();   
