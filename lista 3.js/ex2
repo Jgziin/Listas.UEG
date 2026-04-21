@@ -1,0 +1,30 @@
+//2. Desenvolver um programa para calcular a conta de água para a
+//SANEAGO. O custo da água varia dependendo do tipo do consumidor
+//- residencial, comercial ou industrial.
+//A regra para calcular a conta é:
+//a. Residencial: R$ 5,00 de taxa mais R$ 0,55 por m3 gastos;
+//b. Comercial: R$ 150,00 de taxa mais R$ 1,25 por m3 gastos;
+//c. Industrial: R$ 280,00 de taxa mais R$ 2,54 por m3 gastos;
+
+let prompt = require("prompt-sync")();
+function calcularContaAgua() {
+    let tipoConsumidor = parseInt(prompt("Digite o tipo do consumidor (1 - Residencial, 2 - Comercial, 3 - Industrial): "));
+    let consumoM3 = parseFloat(prompt("Digite o consumo de água em m3: "));
+    let conta;
+    switch (tipoConsumidor) {
+        case 1:
+            conta = 5 + (0.55 * consumoM3);
+        break;
+        case 2:
+            conta = 150 + (1.25 * consumoM3);
+            break;
+        case 3:
+            conta = 280 + (2.54 * consumoM3);
+            break;
+        default:
+            console.log("Tipo de consumidor inválido.");
+            return;
+    }
+    console.log(`A conta de água é de R$ ${conta.toFixed(2)}.`);
+}
+calcularContaAgua();
