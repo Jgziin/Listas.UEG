@@ -8,3 +8,37 @@
 // - Subtração
 // * Multiplicação
 // / Divisão
+
+let prompt = require('prompt-sync')();
+function calcularOperacaoAritmetica() {
+    let numero1 = parseInt(prompt('Digite o primeiro número inteiro: '));
+    let numero2 = parseInt(prompt('Digite o segundo número inteiro: '));
+    let operacao = prompt('Digite a operação aritmética desejada (+, -, *, /): ');
+    let resultado;
+    switch (operacao) {
+        case '+':
+            resultado = numero1 + numero2;
+            break;
+        case '-':
+            resultado = numero1 - numero2;
+            break;
+        case '*':
+            resultado = numero1 * numero2;
+            break;
+        case '/':
+            if (numero2 !== 0) {
+                resultado = numero1 / numero2;
+            }
+            else { 
+                console.log('Erro: Divisão por zero não é permitida.');
+                return;
+            }
+            break;
+        default:
+            console.log('Operação aritmética inválida.');
+            return;
+    }
+    console.log(`O resultado da operação ${numero1} ${operacao} ${numero2} é: ${resultado}`);
+}
+calcularOperacaoAritmetica();
+

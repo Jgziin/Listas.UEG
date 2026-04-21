@@ -7,7 +7,7 @@
 let prompt = require('prompt-sync')();
 
 function calcularSalarioReajustado() 
-{    let salario = parseFloat(prompt('Digite o salário do funcionário: '));
+{   let salario = parseFloat(prompt('Digite o salário do funcionário: '));
     let salarioReajustado;
     if (salario <= 1412.00) {
         salarioReajustado = salario * 1.50;

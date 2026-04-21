@@ -15,7 +15,7 @@ function calcularValorCombustivel() {
     let quantidadeLitros = parseFloat(prompt('Digite a quantidade em litros: '));
     let precoPorLitro;
     switch (tipoCombustivel) 
-    {        case 1:
+    {   case 1:
             precoPorLitro = 4.805;
             break;      
         case 2:

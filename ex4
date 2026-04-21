@@ -1,0 +1,67 @@
+// 4. Fazer um programa que leia os dados de um usuário de telefonia de
+// uma empresa de telecomunicações: bairro e número completo do
+// telefone e verifique se o número do telefone (Exemplo:32121212) está
+// correto, ou seja, se o prefixo (4 primeiros dígitos) é correspondente ao
+// bairro especificado. Sabendo-se que os prefixos existem nos bairros
+// conforme a tabela a seguir:
+
+// Bairro Prefixos
+// Oeste 3223, 3225, 3212,
+// Centro 3223, 3224, 3212,
+// Sul 3241, 3242, 3243, 3281
+// Bueno 3251, 3285
+// Campinas 3233, 3291
+
+let prompt = require('prompt-sync')();
+function verificarTelefone() {
+    let bairro = prompt('Digite o bairro do usuário: ');
+    let telefone = prompt('Digite o número completo do telefone (8 dígitos): ');
+    
+    if (telefone.length !== 8) {
+        console.log('Número de telefone inválido. Deve conter 8 dígitos.');
+        return;
+    }
+    
+    let prefixo = telefone.substring(0, 4);
+    
+    switch (bairro.toLowerCase()) {
+        case 'oeste':
+            if (['3223', '3225', '3212'].includes(prefixo)) {
+                console.log('Número de telefone válido para o bairro Oeste.');
+            } else {
+                console.log('Número de telefone inválido para o bairro Oeste.');
+            }
+            break;
+        case 'centro':
+            if (['3223', '3224', '3212'].includes(prefixo)) {
+                console.log('Número de telefone válido para o bairro Centro.');
+            } else {
+                console.log('Número de telefone inválido para o bairro Centro.');
+            }
+            break;
+        case 'sul':
+            if (['3241', '3242', '3243', '3281'].includes(prefixo)) {
+                console.log('Número de telefone válido para o bairro Sul.');
+            } else {
+                console.log('Número de telefone inválido para o bairro Sul.');
+            }
+            break;
+        case 'bueno':
+            if (['3251', '3285'].includes(prefixo)) {
+                console.log('Número de telefone válido para o bairro Bueno.');
+            } else {
+                console.log('Número de telefone inválido para o bairro Bueno.');
+            }
+            break;
+        case 'campinas':
+            if (['3233', '3291'].includes(prefixo)) {
+                console.log('Número de telefone válido para o bairro Campinas.');
+            } else {
+                console.log('Número de telefone inválido para o bairro Campinas.');
+            }
+            break;
+        default:
+            console.log('Bairro desconhecido. Por favor, insira um bairro válido.');
+    }
+}
+verificarTelefone();    
