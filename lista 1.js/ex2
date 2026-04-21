@@ -1,0 +1,21 @@
+//2. Fazer um algoritmo que calcule e imprima o salário reajustado de um
+//funcionário de acordo com as seguintes regras:
+//● Salários de até R$ 1412,00 reajuste de 50%;
+//● Salários maiores que R$ 1412,00 reajuste de 40%.
+//Obs.: Usuário ideal - ele não irá digitar valores incorretos.
+
+let prompt = require('prompt-sync')();
+
+function calcularSalarioReajustado() 
+{    let salario = parseFloat(prompt('Digite o salário do funcionário: '));
+    let salarioReajustado;
+    if (salario <= 1412.00) {
+        salarioReajustado = salario * 1.50;
+    }
+    else {
+        salarioReajustado = salario * 1.40;
+    }
+    console.log(`O salário reajustado é: R$ ${salarioReajustado.toFixed(2)}`);
+}
+calcularSalarioReajustado();
+    
