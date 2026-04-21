@@ -14,6 +14,12 @@
 
 let prompt = require('prompt-sync')();
 let numero;
-while(numero != 0) {
-    numero = prompt("Digite um número (0 para sair): ");
+while(numero != 200)  {
+    numero = parseInt(prompt("Digite um número: "));
+    if(numero == 200) {
+        console.log("Parabéns, você acertou o número!");
+    } else {
+        console.log("Tente novamente!");
+
+    }
 }
