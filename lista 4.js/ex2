@@ -8,9 +8,57 @@
 //Fórmulas:
  
 //Cone Reto :   volume = π * raio^2 * altura /3
-//              área da superfície = π * raio * (raio + altura)
+//              área da superfície = π * raio * √ (raio^2 + altura^2) / 3
 
+//Cilindro:     volume = π * raio^2 * altura
+//              área da superfície = 2 * π * raio * (raio + altura)
+
+//Esfera:       volume = (4/3) * π * raio^3
+//              área da superfície = 4 * π * raio^2
+
+let prompt= require("prompt-sync")();
+    function cone(){
+        let raio = parseFloat(prompt("Digite o valor do raio: "));
+        let altura = parseFloat(prompt("Digite o valor da altura: "));
+
+        let volume = (Math.PI * Math.pow(raio, 2) * altura) / 3;
+        let area = Math.PI * raio * Math.sqrt(Math.pow(raio, 2) + Math.pow(altura, 2)) / 3;
+
+        console.log(`Volume do cone: ${volume.toFixed(2)}`);
+        console.log(`Área da superfície do cone: ${area.toFixed(2)}`);
+    }   
+    function cilindro(){
+        let raio = parseFloat(prompt("Digite o valor do raio: "));
+        let altura = parseFloat(prompt("Digite o valor da altura: "));
+
+        let volume = Math.PI * Math.pow(raio, 2) * altura;
+        let area = 2 * Math.PI * raio * (raio + altura);
+
+        console.log(`Volume do cilindro: ${volume.toFixed(2)}`);
+        console.log(`Área da superfície do cilindro: ${area.toFixed(2)}`);
+    }
+    function esfera(){
+        let raio = parseFloat(prompt("Digite o valor do raio: "));
+
+        let volume = (4 / 3) * Math.PI * Math.pow(raio, 3);
+        let area = 4 * Math.PI * Math.pow(raio, 2);
+
+        console.log(`Volume da esfera: ${volume.toFixed(2)}`);
+        console.log(`Área da superfície da esfera: ${area.toFixed(2)}`);
+    }
+    let opcao = parseInt(prompt("Escolha a figura (1 - cone reto; 2 - cilindro; 3 - esfera): "));
+    switch (opcao) {
+        case 1:
+            cone();
+            break;
+        case 2:
+            cilindro();
+            break;
+        case 3:
+            esfera();
+            break;
+        default:
+            console.log("Opção inválida. Por favor, escolha 1, 2 ou 3.");
+    }
     
-//Cilindro:
 
-//Esfera:
