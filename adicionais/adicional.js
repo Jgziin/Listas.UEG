@@ -6,7 +6,7 @@
 
 //A ordem dos operadores lógicos em uma expressão se dá
 
-//1- !
+// 1- !
 // 2- &&
 // 3- ||
 
@@ -16,3 +16,11 @@
 
 // ? = "Se sim.." Caso a expressão seja verdadeira.
 // : = "Se não..." Caso a expressão seja falsa.
+
+
+
+let prompt = require('prompt-sync')();
+let numero;
+while(numero != 0) {
+    numero = prompt("Digite um número (0 para sair): ");
+}
