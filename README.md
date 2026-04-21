@@ -1,2 +1,0 @@
-# Listas.UEG
-Atividades faculdade.
