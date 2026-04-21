@@ -1,0 +1,43 @@
+//O programa deverá ler o número da conta do cliente, seu tipo
+//(residencial, comercial e industrial) e o seu consumo de água em
+//metros cubos. Como resultado imprimir a conta do cliente e o valor em
+//real a ser pago pelo mesmo.
+//Uma locadora de filmes tem as seguintes regras para o aluguel
+//destes:
+//● Às segundas, terças e quintas (2,3 e 5) : desconto de 40% em
+//relação ao preço normal;
+//● Às quartas , sextas, sábados e domingos (4,6 ,7 e 1): preço normal;
+//● Aluguel de fitas comuns: preço normal;       
+//● Aluguel de lançamentos: acréscimo de 15% em relação ao preço normal.
+//Desenvolver um programa para ler o preço normal do filme alugado
+//(em R$) e sua categoria (comum ou lançamento). Calcular e imprimir
+//o preço final que será pago pela locação do filme.
+
+let prompt = require("prompt-sync")();
+function calcularPrecoFilme() {
+    let precoNormal = parseFloat(prompt("Digite o preço normal do filme (em R$): "));
+    let categoria = prompt("Digite a categoria do filme (comum ou lançamento): ").toLowerCase();
+    let diaSemana = parseInt(prompt("Digite o dia da semana (1 - Domingo, 2 - Segunda, 3 - Terça, 4 - Quarta, 5 - Quinta, 6 - Sexta, 7 - Sábado): "));
+    let precoFinal;
+    switch (diaSemana) {
+        case 2:
+        case 3:
+        case 5:
+            precoFinal = precoNormal * 0.6; // Desconto de 40%
+            break;
+        case 4:
+        case 6:
+        case 7:
+        case 1:
+            precoFinal = precoNormal; // Preço normal
+            break;
+        default:
+            console.log("Dia da semana inválido.");
+            return;
+    }
+    if (categoria === "lançamento") {
+        precoFinal *= 1.15; // Acréscimo de 15%
+    }
+    console.log(`O preço final a ser pago pela locação do filme é: R$ ${precoFinal.toFixed(2)}`);
+}
+calcularPrecoFilme();
