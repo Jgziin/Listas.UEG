@@ -1,0 +1,10 @@
+// Elabore um algoritmo que leia dois números inteiros e a operação
+// aritmética desejada; calcule, então, a resposta adequada. Utilize os
+// símbolos da tabela a seguir para saber qual a operação aritmética
+// escolhida.
+
+// Símbolo Operação Aritmética
+// + Adição
+// - Subtração
+// * Multiplicação
+// / Divisão
