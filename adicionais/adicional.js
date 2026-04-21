@@ -10,13 +10,6 @@
 // 2- &&
 // 3- ||
 
-//Operadores Ternários ( ? : )
-
-// /Eles tem três operandos, podem ser lidos como:
-
-// ? = "Se sim.." Caso a expressão seja verdadeira.
-// : = "Se não..." Caso a expressão seja falsa.
-
 
 
 let prompt = require('prompt-sync')();
