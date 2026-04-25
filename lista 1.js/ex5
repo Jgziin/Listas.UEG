@@ -6,9 +6,9 @@
 
 let prompt = require('prompt-sync')();
 function calcularRaizes() {
-    let a = parseFloat(prompt("Digite o coeficiente A: "));
-    let b = parseFloat(prompt("Digite o coeficiente B: "));
-    let c = parseFloat(prompt("Digite o coeficiente C: "));
+    let a = Number(prompt("Digite o coeficiente A: "));
+    let b = Number(prompt("Digite o coeficiente B: "));
+    let c = Number(prompt("Digite o coeficiente C: "));
 
     let delta = b * b - 4 * a * c;
 
